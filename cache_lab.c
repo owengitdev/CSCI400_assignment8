@@ -64,7 +64,13 @@ long long traverse_row_major() {
     // TODO: Implement row-major traversal
     // Visit elements in order: [0][0], [0][1], [0][2], ... [1][0], [1][1], ...
     // ============================================
-    
+    for (int row = 0; row < 4; row++){
+        for (int col = 0; col < 4; col++){
+            if (matrix[row][col] > sum) {
+                sum = matrix[row][col];
+            }
+        }
+    }
     return sum;
 }
 
@@ -84,6 +90,13 @@ long long traverse_column_major() {
     // Visit elements in order: [0][0], [1][0], [2][0], ... [0][1], [1][1], ...
     // ============================================
     
+    for (int col = 0; col < 4; col++){
+        for (int row = 0; row < 4; row++) {
+            if (matrix[row][col] > sum) {
+                sum = matrix[row][col];
+            }
+        } 
+    }
     return sum;
 }
 

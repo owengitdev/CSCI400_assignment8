@@ -1,0 +1,61 @@
+Section 1: Performance Measurements
+
+Exectuion Time (Matrix Size: 1000 x 1000)
+Row-Major: 0.00 ms and Sum: 6
+Column-Major:0.00 ms and Sum: 6
+
+
+Exectuion Time (Matrix Size: 2000 x 2000)
+Row-Major: 0.00 ms and Sum: 6
+Column-Major:0.00 ms and Sum: 6
+
+Exectuion Time (Matrix Size: 4000 x 4000)
+Row-Major: 0.00 ms and Sum: 6
+Column-Major:0.00 ms and Sum: 6
+
+Exectuion Time (Matrix Size: 8000 x 8000)
+Row-Major: 0.00 ms and Sum: 6
+Column-Major:0.00 ms and Sum: 6
+
+Section 2: Optimization Level Comparison
+
+Answer: The execution times for both traversal is way different since both of them shows
+decent results. I generally think that -03 does eliminate the performance gap between row-major and column-major. 
+
+Section 3: Assembly Analysis
+
+Answer: I think the two functions are much different within the assembly since
+i seen the output and the results are mixed. I do believe that the results is simliar to the
+performance. I think that the performane will depends on how much code is in the program. 
+
+Section 4: Cache Behavior Explanation
+
+Paragraph
+
+C can stores 2D arrays in memory inside of the capacity of the system.
+Storing a lot of data in which fully depends on the size of the capacity within any systems like
+Computers or Phones. For example, The 2D arrays has more 1GB of data and it needs to be put 
+in a capacity that a memory can hold more 1GB space. 
+I believe that the CPU might be more faster if the cache line within the row-major access.
+Row major access is about storing all data and accessed row by row witin the memory like C arrays.
+I think the CPU mgiht have been faster and most likely benefits from spatial locality. 
+
+If the CPU fetchs a cache line during column-major access, I believe that 
+CPU will requests a memory acess in which blocks the stored ones within the cache for future accesses.
+It will affect the Cloumn-Major pattern by being adjacent within memory. 
+The CPU will fetchs the entire 64-byte starting at the nearest cache line boundary.
+The general reashons that Compiler May Not Be Able to Fix a Problem within  Optimization
+since the transformations that mostly preserve the program's observable behavior and it can't fix the problem since it is inefficent.
+The real problem is not either performace or redundancy issues since it mostly target
+things like unused variable or inefficent instruction sequences.
+The compiler must need to preserve the observable behavior in order to make sure the original code is correct.
+Most Optimization will depends on the target hardware since the problems mostly involves hardware specific behavior like I/O register ordering since the 
+compiler can't fix it without explicit code changes.  
+There are complexity and decidability limits since Optimization problems are NP-complete or undecidable. If the compiler see the problem,
+it is impossible for it be fix without any information or intervention.
+
+
+
+Understanding the cache behavior will deeply help me understand that I should be very careful within implementing 
+my code for my final project. I might used Row-majro traverse_column_major since it is very helpful to maintain the code.
+I will make sure that the access patterns are cache-friendly. 
